@@ -6,7 +6,7 @@ type AddItemButtonProps = {
 
 export const AppContainer = styled.div`
     align-items: flex-start;
-    backgroun-color: #3179ba;
+    background-color: #3179ba;
     display: flex;
     flex-direction: row;
     height: 100%;
