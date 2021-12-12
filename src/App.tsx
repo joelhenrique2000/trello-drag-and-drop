@@ -1,6 +1,7 @@
+import { FC } from "react";
 import { AppContainer } from "./styles";
 
-function App() {
+export const App: FC = ({ children }) => {
   return (
     <AppContainer>
       Columns will go here
