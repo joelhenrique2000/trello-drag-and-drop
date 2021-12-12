@@ -1,4 +1,4 @@
-import { createContext, FC } from 'react'
+import { createContext, FC, useContext } from 'react'
 
 type Task = {
     id: string
@@ -54,4 +54,8 @@ export const AppStateProvider: FC = ({ children }) => {
             {children}
         </AppStateContext.Provider>
     )
+}
+
+export const useAppState = () => {
+    return useContext(AppStateContext)
 }
