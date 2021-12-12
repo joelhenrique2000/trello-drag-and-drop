@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { AppStateProvider } from './state/AppStateContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App>
-      <p>Hello I'm React Element</p>
-    </App>
+    <AppStateProvider>
+      <App />
+    </AppStateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
