@@ -1,5 +1,11 @@
+import { AppContainer } from "./styles";
+
 function App() {
-  return null;
+  return (
+    <AppContainer>
+      Columns will go here
+    </AppContainer>
+  );
 }
 
 export default App;
