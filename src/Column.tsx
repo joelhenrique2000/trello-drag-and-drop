@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import { AddNewItem } from "./AddNewItem";
 import { Card } from "./Card";
+import { addTask } from "./state/actions";
 import { useAppState } from "./state/AppStateContext";
 import { ColumnContainer, ColumnTitle } from "./styles";
 
@@ -10,7 +11,7 @@ type ColumnProps = PropsWithChildren<{
 }>
 
 export const Column: FC<ColumnProps> = ({ text, id }) => {
-    const { getTasksByListId } = useAppState()
+    const { getTasksByListId, dispatch } = useAppState()
 
     const tasks = getTasksByListId(id)
 
@@ -22,7 +23,9 @@ export const Column: FC<ColumnProps> = ({ text, id }) => {
             ))}
             <AddNewItem
                 toggleButtonText="+ Add another task"
-                onAdd={console.log}
+                onAdd={text =>
+                    dispatch(addTask(text, id))
+                }
                 dark
             />
         </ColumnContainer>
